@@ -1,0 +1,327 @@
+@font-face {
+  font-family: "SuperIndie";
+  src: url(../public/assets/font/SuperIndie.ttf)
+}
+
+@import url(https://db.onlinewebfonts.com/c/077a01e3cae645d40fc63d46de4d5a5b?family=Hobeaux+Black);
+@font-face {
+  font-family: "Hobeaux Black";
+  src: url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.eot");
+  src: url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/077a01e3cae645d40fc63d46de4d5a5b.svg#Hobeaux Black")format("svg");
+}
+
+body {
+  background-color: #001122;
+  color: white;
+  margin: 2em;
+}
+
+/* Navbar */
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav > h1:hover {
+  cursor: pointer;
+}
+
+.logo {
+  width: 420px;
+  margin: 0 5% 0 0;
+}
+
+.cartBtn {
+  width: 7em;
+  background: #FF9F0F;
+  border: none;
+  border-radius: 30px;
+  color: snow;
+  cursor: pointer;
+  font-size: 1.25em;
+  letter-spacing: .1em;
+  outline: none;
+  padding: .75em 2em;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover {
+    animation: glow 1s ease-in infinite;
+  }
+
+  &::before {
+    animation: glow 1s ease-in infinite;
+    background: #FF9F0F;
+    border-radius: inherit;
+    content: '';
+    filter: blur(10px);
+    opacity: .75;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    background: #FF9F0F;
+  }
+  25% {
+    background: #F7A934;
+  }
+  100% {
+    background: #FF9F0F;
+  }
+}
+
+
+
+.cart {
+  width: 50%; 
+}
+
+
+/* Home */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Hobeaux Black";
+}
+
+.pizza {
+  width: 600px; 
+  animation: slideFromRight 1s ease forwards;
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slidingText {
+  font-size: 4.5em;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: slideFromLeft 1s ease forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+span {
+  color: #FF9F0F;
+  font-size: 80px;
+  text-align: center;
+}
+
+.free {
+  font-size: 1.2em;
+}
+
+.orderBtn {
+  background-color: #012346;
+  color: #ff9f0f;
+  font-size: 2.5em;
+  border: none;
+  padding: .6em 1.2em;
+  border-radius: 50px;
+  font-family: "SuperIndie";
+}
+
+.orderBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.orderBtn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Container */
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 2.5em 0 0 0;
+  font-family: "SuperIndie";
+}
+
+.infoBoxLink:hover{
+  cursor: pointer;
+}
+
+.infoImg {
+  width: 80px;
+}
+
+.infoBox {
+  width: 400px;
+  height: 180px;
+  background-color: #0b2c4c;
+  padding: 1em;
+  border-radius: 50px;
+}
+
+.infoBox > h1 {
+  color: #FF9F0F;
+}
+
+/* Menu */
+
+.menuContainer {
+  margin: 4em 0 ;
+  font-size: 1.6em;
+  font-family: "SuperIndie";
+}
+
+.menuTitle {
+  text-align: center;
+  font-size: 2.7em;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
+  text-align: center;
+}
+
+.classBtn {
+  margin: .4em;
+  text-decoration: underline;
+  font-size: 2em;
+  background-color: #001122;
+  color: snow;
+  border: none;
+  font-family: "SuperIndie";
+}
+
+.classBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: #ff9f0f;
+}
+
+.classBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
+}
+
+.product {
+  width: 300px;
+  text-align: center;
+  margin: .4em auto;
+  padding: .4em;
+  background-color: #012346;
+  border-radius: 30px;
+}
+
+.product > h2 {
+  margin: .8em 0 .4em;
+}
+
+.product > p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .7em;
+}
+
+.priceBtn  {
+  margin: .6em auto;
+  background-color: #ff9f0f;
+  color: #012346;
+  font-size: .9em;
+  border: none;
+  padding: .3em .7em;
+  border-radius: 50px;
+  font-weight: 900;
+}
+
+.priceBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.priceBtn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menuItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Contact */
+.contactContainer {
+  display: flex;
+  align-items: center;
+  font-family: "SuperIndie";
+  text-align: center;
+  justify-content: center;
+}
+
+.contactTitle {
+  text-align: center;
+  font-family: "SuperIndie";
+  font-size: 2.7em;
+}
+
+.contactImg {
+  width: 4em;
+}
+
+.contactOptions {
+  margin: 1em;
+}
+
+.contactOptions:hover {
+  cursor: pointer;
+}
+
+.phoneNumber:hover {
+  color:#FF9F0F;
+}
+
+.facebook > a {
+  text-decoration: none;
+  color: snow;
+}
+
+.facebook > a:hover {
+  color:#FF9F0F;
+}

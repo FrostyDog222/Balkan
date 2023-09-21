@@ -362,13 +362,37 @@ const menuData = {
             price: "5 RON"
         },
         {
-            name: "Sos Curry / Usturoi / Sos Iute",
+            name: "Sos Curry",
             description: "",
             quantity: "",
             price: "2 RON"
         },
         {
-            name: "Ketchup / Maioneza / Mustar",
+            name: "Usturoi",
+            description: "",
+            quantity: "",
+            price: "2 RON"
+        },
+        {
+            name: "Sos Iute",
+            description: "",
+            quantity: "",
+            price: "2 RON"
+        },
+        {
+            name: "Ketchup",
+            description: "",
+            quantity: "",
+            price: "2 RON"
+        },
+        {
+            name: "Maioneza",
+            description: "",
+            quantity: "",
+            price: "2 RON"
+        },
+        {
+            name: "Mustar",
             description: "",
             quantity: "",
             price: "2 RON"
@@ -466,7 +490,13 @@ const menuData = {
             price: "8 RON"
         },
         {
-            name: "Redbul / Monster",
+            name: "Redbul",
+            description: "",
+            quantity: "",
+            price: "10 RON"
+        },
+        {
+            name: "Monster",
             description: "",
             quantity: "",
             price: "10 RON"
@@ -484,7 +514,13 @@ const menuData = {
             price: "7 RON"
         },
         {
-            name: "Skol / Tuborg",
+            name: "Skol",
+            description: "",
+            quantity: "",
+            price: "8 RON"
+        },
+        {
+            name: "Tuborg",
             description: "",
             quantity: "",
             price: "8 RON"

@@ -368,7 +368,7 @@ const menuData = {
             price: "2 RON"
         },
         {
-            name: "Usturoi",
+            name: "Sos Usturoi",
             description: "",
             quantity: "",
             price: "2 RON"

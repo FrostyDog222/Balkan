@@ -8,14 +8,9 @@ import ScrollButton from "./ScrollButton";
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const [isSolidBackground, setIsSolidBackground] = useState(false);
 
   const addToCart = (product) => {
     setCart([...cart, { ...product, quantity: 1 }]);
-  };
-
-  const toggleCart = () => {
-    setIsSolidBackground(!isSolidBackground);
   };
 
   const removeFromCart = (productName) => {

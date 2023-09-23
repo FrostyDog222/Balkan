@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import menuData from "./data";
+import React, { useState } from "react"
+import menuData from "./data"
 
 export default function Menu({ addToCart }) {
   const [currentCategory, setCurrentCategory] = useState("Pizza");
@@ -15,8 +15,8 @@ export default function Menu({ addToCart }) {
           {item.price}
           </button>
         </div>
-      );
-    });
+      )
+    })
 
     return currentItems;
   }
@@ -36,5 +36,5 @@ export default function Menu({ addToCart }) {
         </div>
       <div className="menuItems">{menuItems()}</div>
     </div>
-  );
+  )
 }

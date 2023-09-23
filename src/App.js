@@ -30,9 +30,6 @@ export default function App() {
       <Menu addToCart={addToCart} />
       <Contact />
       <ScrollButton />
-      <button onClick={toggleCart} className={isSolidBackground ? "solidBackground" : ""}>
-        Coș de cumpărături
-      </button>
       {cart.length > 0 && <Cart cartItems={cart} removeFromCart={removeFromCart} />}
     </div>
   );

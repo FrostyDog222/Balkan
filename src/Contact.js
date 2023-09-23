@@ -15,7 +15,7 @@ export default function Contact() {
   }
 
   return (
-    <div>
+    <div id="contact">
       <h1 className="contactTitle">Contacteaza-ne</h1>
       <div className="contactContainer">
         <div className="contactOptions phoneNumber" onClick={copyPhoneNumberToClipboard}>

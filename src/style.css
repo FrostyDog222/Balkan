@@ -29,8 +29,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav > h1:hover {
+.nav > a {
+  font-size: 2em;
+  font-family: "SuperIndie";
+}
+
+.nav > a:hover {
   cursor: pointer;
+  color: #FF9F0F;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #ff9f0f;
 }
 
 .logo {
@@ -169,6 +177,11 @@ span {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.homeContainer {
+  width: 90%;
+  margin: 0 auto;
+}
+
 /* Info Container */
 
 .infoContainer {
@@ -196,6 +209,10 @@ span {
   border-radius: 50px;
 }
 
+.location {
+  text-decoration: none;
+}
+
 .infoBox > h1 {
   color: #FF9F0F;
 }
@@ -216,7 +233,7 @@ span {
 .categories {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0px;
+  gap: 5px;
   text-align: center;
 }
 
@@ -230,14 +247,18 @@ span {
   font-family: "SuperIndie";
 }
 
-.classBtn:hover {
+.classBtn:hover,
+.deleteBtn:hover,
+.close:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
   cursor: pointer;
   color: #ff9f0f;
 }
 
-.classBtn:active {
+.classBtn:active,
+.deleteBtn:active,
+.close:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0);
 }
@@ -325,4 +346,137 @@ span {
 
 .facebook > a:hover {
   color:#FF9F0F;
+}
+
+/* ScrollButton */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #053b70;
+  color: #FF9F0F;
+  font-size: 40px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+.scroll-to-top.visible {
+  display: block;
+}
+
+.scroll-to-top:hover {
+  background-color: #FF9F0F;
+  color: #053b70;
+}
+
+/* Cart */
+
+.cart-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: none;
+  border: none;
+  padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: block;
+  color: snow;
+  font-family: "SuperIndie";
+  text-align: center;
+}
+
+ ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  border-bottom: 2px solid snow;
+  font-size: 1.2em;
+  padding: .8em 0;
+}
+
+
+.cart-container:active {
+  display: block;
+}
+
+.solidBackground {
+  background-color: #053b70;
+  border-radius: 30px;
+  padding: 1.6em;
+}
+
+.orderCart {
+  width: 8em;
+  background: #FF9F0F;
+  border: none;
+  border-radius: 30px;
+  color: snow;
+  cursor: pointer;
+  font-size: .7em;
+  letter-spacing: .1em;
+  outline: none;
+  padding: .75em 1.5em;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover {
+    animation: glow 1s ease-in infinite;
+  }
+
+  &::before {
+    animation: glow 1s ease-in infinite;
+    background: #FF9F0F;
+    border-radius: inherit;
+    content: '';
+    filter: blur(10px);
+    opacity: .75;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+  }
+}
+
+.delete {
+  width: 25px;
+}
+
+.deleteBtn {
+  border-radius: 10px;
+  margin-left: 1em;
+  border: none;
+  background-color: #FF9F0F;
+}
+
+.close {
+  border-radius: 10px;
+  margin-left: 1em;
+  border: none;
+  background-color: #FF9F0F;
+  color: #012346;
+  font-size: 1.4em;
+  font-family: "SuperIndie";
+  padding: .4em;
+}
+
+.close:hover {
+  color: #012346;
 }

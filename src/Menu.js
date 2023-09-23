@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import menuData from "./data";
 
-export default function Menu() {
-  const [currentCategory, setCurrentCategory] = useState("Pizza")
+export default function Menu({ addToCart }) {
+  const [currentCategory, setCurrentCategory] = useState("Pizza");
+
   function menuItems() {
-    const currentItems = menuData[currentCategory].map((item, index) => {
+    const currentItems = menuData[currentCategory].map((item) => {
       return (
         <div className="product" key={item.name}>
           <h2>{item.name}</h2>
           <p>{item.description}</p>
           <p>{item.quantity}</p>
-          <button className="priceBtn">{item.price}</button>
+          <button className="priceBtn" onClick={() => addToCart(item)}>
+          {item.price}
+          </button>
         </div>
       );
     });
@@ -19,7 +22,7 @@ export default function Menu() {
   }
 
   return (
-    <div className="menuContainer">
+    <div className="menuContainer" id="meniu">
       <h1 className="menuTitle">Meniu</h1>
       <div className="categories">
         <button className="classBtn" onClick={() => setCurrentCategory("Pizza")}>Pizza</button>
@@ -30,7 +33,7 @@ export default function Menu() {
         <button className="classBtn" onClick={() => setCurrentCategory("Extra")}>Extra</button>
         <button className="classBtn" onClick={() => setCurrentCategory("Clatite")}>Clatite</button>
         <button className="classBtn" onClick={() => setCurrentCategory("Bauturi")}>Bauturi</button>
-      </div>
+        </div>
       <div className="menuItems">{menuItems()}</div>
     </div>
   );

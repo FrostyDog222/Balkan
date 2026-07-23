@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "SuperIndie";
-  src: url(../public/assets/font/SuperIndie.ttf) format("truetype");
+  src: url("/assets/font/SuperIndie.ttf") format("truetype");
   font-display: swap;
 }
 

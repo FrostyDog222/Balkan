@@ -10,6 +10,7 @@
 
 # Production build
 /build
+/dist
 
 # Environment variables & secrets (never commit these)
 .env

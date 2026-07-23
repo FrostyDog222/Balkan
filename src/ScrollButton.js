@@ -1,34 +1,26 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
 export default function ScrollToTopButton() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility)
-
-    return () => {
-      window.removeEventListener("scroll", toggleVisibility)
-    };
+    const toggleVisibility = () => setIsVisible(window.scrollY > 300);
+    toggleVisibility();
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false)
-    }
-  };
-
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className={`scroll-to-top ${isVisible ? "visible" : ""}`} onClick={scrollToTop}>
+    <button
+      className={`scroll-to-top ${isVisible ? "visible" : ""}`}
+      onClick={scrollToTop}
+      aria-label="Inapoi sus"
+    >
       &#9650;
-    </div>
+    </button>
   );
 }

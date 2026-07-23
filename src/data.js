@@ -1,3 +1,9 @@
+// Turn a price label like "27 RON", "7RON" or "3 RON / Buc" into a number (27, 7, 3).
+export function priceToNumber(price) {
+  if (typeof price !== "string") return 0;
+  const match = price.replace(",", ".").match(/\d+(\.\d+)?/);
+  return match ? parseFloat(match[0]) : 0;
+}
 
 const menuData = {
     Pizza: [
@@ -21,7 +27,7 @@ const menuData = {
         },
         {
             name: "Pizza Balkan",
-            description: "sos de rosii, mozzarella, oregano, salam, salam afumat, sunca, bacon, ciuperci, ceapa, masilne, pui",
+            description: "sos de rosii, mozzarella, oregano, salam, salam afumat, sunca, bacon, ciuperci, ceapa, masline, pui",
             quantity: "800g",
             price: "33 RON"
         },
@@ -98,10 +104,10 @@ const menuData = {
             price: "27 RON"
         },
         {
-            name: "Focaccia",
+            name: "Pizza Panne (Focacia)",
             description: "olio extra vergine di Olivia, oregano, sare",
             quantity: "350g",
-            price: "7RON"
+            price: "7 RON"
         },
         {
             name: "Pizza Family",
@@ -142,7 +148,7 @@ const menuData = {
             price: "24 RON"
         },
         {
-            name: "Sharoma Vegetariana",
+            name: "Shaorma Vegetariana",
             description: "varza, ceapa, masline, porumb, salata verde, rosii, ciuperci, cartofi",
             quantity: "450g",
             price: "17 RON"
@@ -254,7 +260,7 @@ const menuData = {
             price: "7 RON"
         },
         {
-            name: "Cartofi cu Mozzazrella",
+            name: "Cartofi cu Mozzarella",
             description: "",
             quantity: "",
             price: "10 RON"
@@ -362,37 +368,13 @@ const menuData = {
             price: "5 RON"
         },
         {
-            name: "Sos Curry",
+            name: "Sos Curry / Usturoi / Iute",
             description: "",
             quantity: "",
             price: "2 RON"
         },
         {
-            name: "Sos Usturoi",
-            description: "",
-            quantity: "",
-            price: "2 RON"
-        },
-        {
-            name: "Sos Iute",
-            description: "",
-            quantity: "",
-            price: "2 RON"
-        },
-        {
-            name: "Ketchup",
-            description: "",
-            quantity: "",
-            price: "2 RON"
-        },
-        {
-            name: "Maioneza",
-            description: "",
-            quantity: "",
-            price: "2 RON"
-        },
-        {
-            name: "Mustar",
+            name: "Ketchup / Maioneza / Mustar",
             description: "",
             quantity: "",
             price: "2 RON"
@@ -490,13 +472,7 @@ const menuData = {
             price: "8 RON"
         },
         {
-            name: "Redbul",
-            description: "",
-            quantity: "",
-            price: "10 RON"
-        },
-        {
-            name: "Monster",
+            name: "Red Bull / Monster",
             description: "",
             quantity: "",
             price: "10 RON"
@@ -514,13 +490,7 @@ const menuData = {
             price: "7 RON"
         },
         {
-            name: "Skol",
-            description: "",
-            quantity: "",
-            price: "8 RON"
-        },
-        {
-            name: "Tuborg",
+            name: "Skol / Tuborg",
             description: "",
             quantity: "",
             price: "8 RON"

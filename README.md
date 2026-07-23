@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Balkan Food House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website for Balkan Food House — a pizza & fast food restaurant in Sânnicolau Mare.
+Single-page React app: menu, cart, checkout (card or cash on delivery), and contact.
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+- Node.js 18+ and npm
 
-### `npm start`
+## Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install      # first time only
+npm run dev      # start the dev server at http://localhost:3000
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`npm start` does the same thing as `npm run dev`.
 
-### `npm test`
+## Production build
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run build    # outputs a static site to /build
+```
 
-### `npm run build`
+## Deploy to Netlify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build settings are in `netlify.toml` (build command `npm run build`, publish
+directory `build`), so no manual config is needed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Git-connected:** push this repo to GitHub/GitLab, then in Netlify choose
+  "Add new site" → "Import an existing project" and pick the repo. Netlify reads
+  `netlify.toml` and deploys on every push.
+- **Manual:** run `npm run build` and drag the `build` folder onto
+  app.netlify.com.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project structure
 
-### `npm run eject`
+```
+public/            static assets served as-is (icons, fonts, images, manifest)
+src/
+  App.js           app shell + cart/checkout state
+  cartLogic.js     pure cart operations (add / remove / totals)
+  Home.js          hero + info cards
+  Menu.js          menu with categories
+  data.js          menu items and prices
+  Cart.js          slide-in cart drawer
+  Checkout.js      delivery details + payment (card / cash)
+  OrderSuccess.js  order confirmation popup
+  Contact.js       contact section
+  navBar.js        header + mobile menu
+  Footer.js        footer
+  ScrollButton.js  back-to-top button
+  flyToCart.js     add-to-cart animation
+  style.css        all styles
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Note: the checkout is a front-end demo — there is no backend, so no order or
+> card data is stored or transmitted. To accept real payments, integrate a
+> provider such as Stripe.

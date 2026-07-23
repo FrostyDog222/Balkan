@@ -1,0 +1,23 @@
+# Netlify configuration for Balkan Food House (Create React App)
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # CRA treats lint warnings as errors when CI is set (Netlify sets CI=true).
+  # Keep warnings non-fatal so the production build succeeds.
+  CI = "false"
+  NODE_VERSION = "20"
+
+# Single-page app: serve index.html for any path.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Long-cache the hashed build assets.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
